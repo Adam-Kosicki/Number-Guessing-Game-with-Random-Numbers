@@ -16,9 +16,11 @@ int main() {
 
     // Keep reading numbers from the user and providing feedback
     while (response != '=') {
+        // Read user input
         fgets(line, 100, stdin);
         sscanf(line, "%d", &received);
 
+        // Compare user input with the generated number
         if (received < number)
             response = '>';
         else if (received > number)
@@ -34,6 +36,7 @@ int main() {
         fprintf(stderr, "%c\n", response);
     }
 
+    // Indicate completion
     fputs("Child: done.\n", stderr);
     return 0;
 }
